@@ -1,0 +1,219 @@
+body{
+    font-family: Calibri;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f4f4f4;
+    background: rgba(0,0,0,0.4) url(/images/whiteaesthetic.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+  }
+  .main{
+    width:100%;
+    position: relative;
+  }
+  .logo img {
+    height: 80px;
+    position: relative;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 30px;
+    background-color: #fff;
+    box-shadow: 2px 2px 20px rgba(255, 151, 103, 0.164);
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    font-family: Calibri;
+  }
+  nav img{
+    width: 300px;
+    cursor: pointer;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  nav ul li a {
+    height: 40px;
+    line-height: 43px;
+    margin: 8px;
+    padding: 0px 10px;
+    display: flex;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: 1px;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    border-radius: 5px;
+    background-color: rgb(106, 21, 218);
+    color: #fff;
+    box-shadow: 5px 10px 30px rgba(63, 6, 219, 0.5);
+    transition: all ease 0.2s;
+  }
+  nav .menu-btn {
+    display: none;
+  }
+  
+  nav .menu-icon {
+    left: 4%;
+  }
+  footer{
+    width:100%;
+    text-align: center;
+    padding: 1px 0px;
+}
+nav .menu-btn{
+    display: none;
+}
+
+  /*-- Courses -- */
+.courses{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 150px;
+  color: white;
+}
+.courses h1{
+  font-size: xxx-large;
+}
+.courses p{
+  font-size: large;
+}
+.courses-col{
+  flex-basis: 31%;
+  margin-bottom: 5%;
+  padding: 25px 12px;
+  text-align: center;
+}
+.courses-col img:hover{
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+.courses-col img{
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.row1{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1px;
+}
+
+@media (max-width:1100px){
+  nav{
+      justify-content: space-between;
+      height: 90px;
+  }
+  .modal{
+      top: 5.6rem;
+  }
+  .menu{
+      display: none;
+      position: absolute;
+      top: 85px;
+      left: 0px;
+      background-color: #fff;
+      width:100%;
+  }
+  .menu li{
+      width:100%;
+  }
+  nav .menu li a{
+      width:100%;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      margin:0px;
+      padding: 25px;
+      border:1px solid rgba(38,38,38,0.03);
+  }
+  nav .menu-icon{
+      cursor: pointer;
+      float: left;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+  }
+  nav .menu-icon .nav-icon{
+      background-color: #333333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width:18px;
+  }
+  nav .menu-icon .nav-icon:before,
+  nav .menu-icon .nav-icon:after{
+      background: #333333;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all ease-out 0.2s;
+      width:100%;
+  }
+  nav .menu-icon .nav-icon:before{
+      top: 5px;
+  }
+  nav .menu-icon .nav-icon:after{
+      top:-5px;
+  }
+  nav .menu-btn:checked ~ .menu-icon .nav-icon{
+      background: transparent;
+  }
+  nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+      transform: rotate(-45deg);
+      top: 0;
+  }
+  nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+      transform: rotate(45deg);
+      top: 0;
+  }
+  nav .menu-btn{
+      display: none;
+  }
+  nav .menu-btn:checked ~ .menu{
+      display: block;
+  }
+  .row{
+    display: inline;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.row1{
+  display: inline;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.courses-col img:hover{
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+.courses-col img{
+  width: 80%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+}

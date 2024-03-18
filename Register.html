@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Now</title>
+  <link rel="stylesheet" href="Register.css" />
+  <link rel="shortcut icon" href="images/logo-kopi.png" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <section class="main">
+
+        <nav>
+          <a href="#" class="logo">
+            <img src="images/logoicct.png" width="300px" />
+          </a>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+          </label>
+          <ul class="menu" style="border-radius: 5px;">
+            <li><a href="Homepage-Login.html">Home</a></li>
+            </ul>
+        </nav>
+    </section>
+
+<div class="wrapper">
+    <form action="">
+      <h1>Register</h1>
+      <div class="input-box1">
+        <div class="input-field">
+          <input id="fullname" type="text" placeholder="Full Name" required>
+          <i class="bx bxs-user"></i>
+        </div>
+
+        <div class="input-field">
+          <input id="username" type="text" placeholder="Username" required>
+          <i class="bx bxs-user"></i>
+        </div>
+
+        <div class="input-field">
+          <input id="email" type="email" placeholder="Email" required>
+          <i class="bx bxs-envelope"></i>
+        </div>
+
+        <div class="input-field">
+          <input id="number" type="number" placeholder="Phone Number" required>
+          <i class="bx bxs-phone"></i>
+        </div>
+
+        <div class="input-field">
+          <input id="password" type="password" placeholder="Password" required>
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="input-field">
+          <input id="cpassword" type="password" placeholder="Confirm Password" required>
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+      </div>
+
+      <label><input type="checkbox"> I agree to the Privacy Policy</label>
+
+    <button id="buton" type="submit" class="btn1">Register</button>
+    </form>
+  </div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD1TdWHeY25vhepS2l3KGG8gJUZgwo_W24",
+        authDomain: "database-lahatan.firebaseapp.com",
+        databaseURL: "https://database-lahatan-default-rtdb.firebaseio.com",
+        projectId: "database-lahatan",
+        storageBucket: "database-lahatan.appspot.com",
+        messagingSenderId: "586335407939",
+        appId: "1:586335407939:web:f90cbbb42272c602e469f6"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const database = getDatabase(app);
+
+    const buttonSignup = document.getElementById("buton");
+
+    buttonSignup.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let fullname = document.getElementById("fullname").value;
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let number = document.getElementById("number").value;
+        let password = document.getElementById("password").value;
+        let cpassword = document.getElementById("cpassword").value;
+        let buton = document.getElementById("buton").value;
+
+        // Create user with email and password
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredentials) => {
+                // Signup successful
+                const user = userCredentials.user;
+                // Save user data to the database
+                set(ref(database, "users/" + user.uid), {
+                    fullname: fullname,
+                    username: username,
+                    email: email,
+                    number: number,
+                    password: password,
+                    cpassword: cpassword,
+                    buton: buton
+                });
+                alert("User registered successfully");
+            })
+            .catch((error) => {
+                // Handle errors
+                alert(error.message);
+            });
+    });
+</script>
+</body>

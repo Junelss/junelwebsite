@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to ICCT Colleges Portal</title>
+  <link rel="stylesheet" href="Homepage.css" />
+  <link rel="shortcut icon" href="images/logo-kopi.png" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/19f6e9f6c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <section class="main">
+
+    <nav>
+      <a href="#" class="logo">
+        <img src="images/icct logo.png"/>
+      </a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+      </label>
+      <ul class="menu" style="border-radius: 5px;">
+        <li><a href="About.html">About</a></li>
+        <li><a href="Calendar.html">Calendar</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a id="logout" type="submit" class="active" onclick= 
+          style ="width:auto; border-radius: 5px; cursor: pointer;">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="home-content">
+
+      <div class="home-text">
+
+        <h3 style="color: white; letter-spacing: 3px;">Welcome to ICCT Colleges</h3>
+        <h1 style="color: white;"> Student Portal</h1>
+        <p style="color: white;">To prepare students for the manifold demands of technological efficiency needed in the
+          fields of Information and Communication Technology,
+          the Health Sciences and the Various disciplines of educational pursuits through research, advance studies, and
+          international linkages;
+          and to temper this training with the inculcation of genuine love for work and the virtues of a value-based
+          individual.</p>
+
+        <a class="main-login" style="border-radius: 5px;">Apply Now</a>
+      </div>
+
+      <div class="home-img" style="width: 500px;">
+        <img src="images/logo-kopi.png" width="500px" style="text-shadow: 20px 22px;" />
+        <marquee width="100%" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+          <a href="#" style="color: white;">Admission open of 1st, January 2024 in Cainta, Binangonan, San Mateo, Cogeo,
+            Taytay, Sumulong and Antipolo.</a>
+        </marquee>
+        <marquee width="100%" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
+          <a style="color: white;">Admission open of 1st, January 2024 in Cainta, Binangonan, San Mateo, Cogeo,
+            Taytay, Sumulong and Antipolo.</a>
+        </marquee>
+      </div>
+
+    </div>
+
+
+    <div class="arrow"></div>
+    <span class="scroll">Scroll</span>
+  </section>
+
+
+  <section class="services">
+
+    <div class="services-heading">
+      <h2 id="h22">OUR PROFESSIONAL COURSES</h2>
+    </div>
+
+    <div class="box-container">
+
+      <div class="box">
+        <img src="images/briefcase.png">
+        <font>BS in Business Administration</font>
+        <p><b>
+            <h5>Bachelor's in Business Administration is a foundational degree that can give you the education you need
+              for administrative roles.<br>
+              This course focuses on the interrelationship of the different functional areas of business.</h5>
+          </b></p>
+
+        <a>Apply Now</a>
+      </div>
+
+      <div class="box">
+        <img src="images/fingerprint.png">
+        <font>BS in Criminology</font>
+        <p>
+        <h5><b>Criminology is a four year degree program in the Philippines that is mainly concerned with the nature of
+            crimes and criminals.<br>
+            Taking up this course will help you understand what is crime, how crime works and what crime can bring to
+            us.</b></h5>
+        </p>
+
+        <a>Apply Now</a>
+      </div>
+
+      <div class="box">
+        <img src="images/IT.png">
+        <font>BS in Information & Technology</font>
+        <p><b>
+            <h5>BSIT is an undergraduate degree program that focuses on the study of information technology. This covers a range of topics related to computer systems, networks and software development.</h5>
+          </b></p>
+
+        <a>Apply Now</a>
+      </div>
+
+      <div class="box">
+        <img src="images/computerscience.png">
+        <font>Computer Science</font>
+        <p><b>
+            <h5>BS in Computer Science focuses on the study of computer systems, software development and various
+              aspects of computing.<br>
+              This is designed to provide students with a solid foundation in both theoretical and practical aspects of
+              computer science.</h5>
+          </b></p>
+        <a>Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>You can find us here by clicking the links and icons</p>
+    <div class="icons">
+      <a href="https://www.facebook.com/profile.php?id=100084805913746&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/juneeell/"><i class="fa fa-instagram"></i></a>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by BRGY Boang</p>
+  </section>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD1TdWHeY25vhepS2l3KGG8gJUZgwo_W24",
+        authDomain: "database-lahatan.firebaseapp.com",
+        databaseURL: "https://database-lahatan-default-rtdb.firebaseio.com",
+        projectId: "database-lahatan",
+        storageBucket: "database-lahatan.appspot.com",
+        messagingSenderId: "586335407939",
+        appId: "1:586335407939:web:f90cbbb42272c602e469f6"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Log-Out
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) =>{
+      e.preventDefault()
+
+      auth.signOut().then(() => {
+        console.log('User Signed Out');
+
+        location.href = "http://127.0.0.1:5500/Homepage-Login.html";
+        alert("User Signed Out");
+  });
+});
+</script>
+</body>
+</html>
